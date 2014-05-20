@@ -1,0 +1,110 @@
+\input opmac
+\chyph
+
+\input cs-adventor
+\input cs-pagella
+\ifx\font\corkencoded \def\tmp{ec}\else\def\tmp{cs}\fi
+\font\tenss   =\tmp-qhvr  \sizespec
+\font\tenssi  =\tmp-qhvri \sizespec
+\font\tenssb  =\tmp-qhvb  \sizespec
+\font\tenssbi =\tmp-qhvbi \sizespec
+\regfont\tenss \regfont\tenssi \regfont\tenssb \regfont\tenssbi
+\regfont\tenbfc
+\def\ss{\tenss\thefontscale[900]} \def\ssi{\tenssi\thefontscale[900]}
+\def\tt{\tentt\thefontscale[1050]}
+\font\citatrm=\tmp-qagri \sizespec
+\font\thumbbf=\tmp-qagb \sizespec
+\font\male=\tmp-qplr at 8pt
+\font\malebf=\tmp-qplb at 8pt
+\font\maleit=\tmp-qplri at 8pt
+\font\malebi=\tmp-qplbi at 8pt
+
+\def\tocborder{1 0 0}
+\def\ddl{\kern-\vvkern\kern-\vvkern\kern0.3pt\vrule\kern\vvkern\vrule\kern\vvkern\kern-0.3pt}
+
+\newbox\tabbox
+\newbox\headb
+\newbox\pagebox
+\newdimen\orivsize
+\newdimen\tabsize
+\newdimen\dist
+
+\def\beglongtable{\bigskip
+	\ifinner \errmessage{Velká tab. musí být v hlavním módu}\fi
+	\begingroup \offinterlineskip \orivsize=\vsize
+	\topskip=0pt \holdinginserts=1 \maxdeadcycles=1000
+	\output={\globaldefs=1 \ifnum\outputpenalty=-10001 \savehead
+		\else \savetable \fi}}
+\def\endlongtable{\penalty-10000 % naposledy speciální \output
+	\global\vsize=\orivsize % návrat k puvodní \vsize
+	\endgroup \unvbox\pagebox \unvbox\tabbox
+	\bigskip}
+\def\savehead{%
+	\setbox\pagebox=\vbox{\unvbox255 \setbox\headb=\lastbox}
+	\tabsize=\vsize %% \tabsize := \vsize-(\ht+\dp)\headb-4.7pt
+	\advance\tabsize by-\ht\headb \advance\tabsize by-\dp\headb
+	\advance\tabsize by-4.7pt
+	\vsize=\pagegoal %% \vsize := \pagegoal - \pagetotal - 4.7pt
+	\advance\vsize by-\pagetotal \advance\vsize by-4.7pt
+	\ifdim\vsize<\bigskipamount \vsize=\tabsize \fi
+	\dist=\hsize %% \dist := (\hsize - \wd\headb) / 2
+	\advance\dist by-\wd\headb \divide\dist by2 }
+\def\savetable{\setbox\tabbox=\vbox{\unvbox\tabbox
+	%\moveright\dist
+	\vbox{%
+	\hrule\copy\headb\hrule\unvbox255\hrule}
+	\vfil\penalty0}
+	\vsize=\tabsize}
+
+\def\crx{\crcr\noalign{\penalty10000\hrule\penalty1000\kern-.4pt\hrule\penalty10000}}
+
+\newdimen\Pwidth
+\newdimen\Qwidth
+\def\tabdeclareP {\tabiteml\vtop{\hsize=\Pwidth \rightskip=0pt plus1fil
+   \baselineskip=1.2em \lineskiplimit=0pt \noindent ##\tabstrutA}\hss\tabitemr}
+\def\tabdeclareQ {\tabiteml\vtop{\hsize=\Qwidth \leftskip=0pt plus 1fil \rightskip=0pt plus 1fil
+   \baselineskip=1.2em \lineskiplimit=0pt \noindent ##\tabstrutA}\tabitemr}
+\Pwidth=3cm
+\Qwidth=1cm
+
+\newtoks\headname \headname={}
+
+\def\headrule{\leaders\hrule height3pt depth-2.6pt\hfil}
+
+\margins/2 a4l (1,1,2,2)cm
+\footline={}
+
+\vfil
+\tit Statistika známek pro PF UK (2010/11, 2011/12, 2012/13)
+
+\vfil
+
+\tit Pracovní materiál pro akademický senát PF UK\nl a komisi děkana PF UK pro IT
+
+\vfil
+
+\picw=0.3\hsize \centerline{\inspic logo.jpg }
+\vfil
+\hfill {\em Zpracoval Bc. Michal Tuláček, 20. května 2014}
+\eject
+
+\headline={{\it Statistika známek pro PF UK (2010/11, 2011/12, 2012/13)\kern0.5cm \headrule\kern0.5cm \the\headname}}
+\footline={\hss\tenrm\thefontsize[10]\the\pageno\hss}
+
+\input uvod
+
+\vfill
+\eject
+
+\nonum\notoc\chap Obsah
+
+\hyperlinks{\Blue}{\Green}
+
+\begmulti 2
+\maketoc
+\endmulti
+
+
+\input all
+
+\bye

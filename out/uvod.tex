@@ -1,0 +1,76 @@
+\headname={Úvod}
+\nonum\notoc\chap Úvod
+
+\begmulti 2
+
+Text, který nyní čtete je statistickou analýzou známek udělených na Právnické fakultě Univerzity Karlovy v Praze. Analyzovaná data pocházejí z akademických roků 2010/11, 2011/12 a 2012/13 roku 2012/13. Tento text byl zpracován s cílem poskytnout vhled do situace, protože okolo známkování vzniká mnoho různě podložených mýtů, založených zejména na osobním
+pozorování.
+
+Při analýze dat je třeba mít na paměti, že máme k dispozici pouze neúplné informace. Nevíme, jak připravení studenti chodí na zkoušky -- pouze předpokládáme, že nepřijdou všichni
+zcela naučeni a nebo zcela nenaučeni. Výstupy analýzy tedy nelze hodnotit tak, že by se pouze zkontrolovaly průměry a podle toho se posuzovalo, zda se zkoušející vymyká 
+normě katedry a nebo ne. Postup by měl být spíše takový, že by se mělo v rámci kateder debatovat nad tím, zda požadavky některého zkoušejícího nejsou nepřiměřené s ohledem
+na požadavky jeho kolegů ve stejné oblasti. Analýza by tedy měla být podkladem pro diskusi, a nikoliv řešením sama o sobě.
+
+Dovolte mi poděkovat panu Ing. Stanislavu Potěšilovi, který z informačního systému získal data, která jsou podkladem pro tuto analýzu.
+
+\bigskip
+
+Bc. Michal Tuláček, akademický senátor PF UK
+
+\notoc\sec Struktura dokumentu
+
+Analýza je rozdělena do dvou částí. První část obsahuje souhnnou analýzu povinných předmětů magisterského studijního programu (předmětů dle nové akreditace). Druhá část pak obsahuje podrobné grafy, tabulky a statistické hypotézy pro všechny předměty, které byly na právnické fakultě zakončeny známkou. Tento dokument je členěn do kapitol podle kateder a dále do částí podle jednotlivých předmětů. Každý předmět pak obsahuje slovní shrnutí dat společně s přehledem výsledků hypotéz. Dále jsou u každého 
+předmětu uvedeny grafy jednotlivých sledovaných charakteristik, a konečně nejobjemnější částí jsou tabulky, obsahující agregovaná data a popisné statistiky.
+
+\notoc\sec Popis užitých popisných výběrových statistik
+
+\begitems \style X
+
+* {\bf Počet}, {\bf n} -- nejjednodušší popisnou statistikou je počet, obsahující údaj o počtu hodnot ve statistickém souboru.
+* {\bf Průměr}, {\bf \o} -- aritmetický průměr hodnot ($\sum{x_i\over n}$), která dobře popisuje střední hodnotu dat, avšak je snadno ovlivnitelná odlehlými hodnotami.
+* {\bf Medián}, {\bf med}, {\bf Q$_{50}$} -- \uv{prostřední} hodnota souboru. Polovina hodnot je menší nebo rovna mediánu a polovina hodnot je větší než medián.
+% * {\bf Modus}, {\bf mod} -- \uv{nejčastější} hodnota souboru. Modus má obecně malou vypovídací hodnotu, avšak na malém souboru dat, jako jsou například známky, jde však o ukazatel, který má smysl
+% sledovat. Modus může nabývat více hodnot.
+* {\bf Směrodatná odchylka}, {\bf s} -- charakteristika statistického souboru, která vyjadřuje jeho rozptyl okolo průměru. Většina hodnot ve statistickém souboru je vzdálena nejvýše o směroatnou odchylku od půměru (a prakticky všechny hodnoty jsou do vzdálenosti dvou směrodatných odchylek od průměru).
+* {\bf Šikmost}, {\bf g${}_1$} -- charakteristika statistického souboru, která vyjadřuje, zda je soubor symetrický kolem průměru a nebo, zda se na jedné jeho straně vyskytuje více hodnot. Symetrický
+soubor dat má šikmost 0, soubor dat, který má většinu hodnot vlevo (tedy většina hodnot je menší než průměr) má šikmost kladnou, soubor dat, který má většinu hodnot vpravo (většina hodnot je větších než průměr) má šikmost zápornou. 
+* {\bf Normovaná rezidua}, {\bf $\hat{e}_{Ni}$} -- rozdíl mezi průměrem pro vybraný ukazatel a průměrem celku, vydělený pomocí směrodané odchylky rozdílů.
+\enditems
+
+\notoc\sec Pearsonova standardizovaná residua
+
+Ukazatel, který pomáhá určit, jak závažná je odchylka mezi skutečným hodnocením a hodnocením, které by bylo nezávislé na konkrétním učiteli.
+
+Matice standardizovaných reziduí se spočte pomocí následujícího vzorce:
+
+$$\hat{e}_{ij} = {O_{ij} - E_{ij}\over \sqrt{E_{ij}(1-p_{i\bullet})(1-p_{\bullet j})}},$$
+
+kde $\hat{e}_{ij}$ je standardizované reziduum, $O_{ij}$ je pozorovaná hodnota, $E_{ij}$ je očekávaná hodnota a $p_{i\bullet}$ resp. $p_{\bullet j}$ jsou součty sloupců resp. řádků, vydělené celkovým součtem hodnot.
+
+Rezidua vyjadřují míru toho, jak pravděpodobné je, že pozorovaná četnost známek odpovídá očekávané četnosti (tedy aplikováno na náš případ, že hodnocení není závislé na osobě zkoušejícího). Protože jsou rezidua standardizovaná, jde o výběr z normálního rozdělení N(0,1). Z toho vyplývá, že většinu hodnot nalezneme v intervalu $(-1;1)$ (pravděpodobnost cca. 68,2 \%). Z následujícího grafu vyplývá pravděpodobnost pro další hodnoty -- např. hodnoty v intervalu $(2;3)$ mají pravděpodobnost cca. 2,1 \% a všechny hodnoty větší než $3$ mají pravděpodobnost cca. 0,1 \%.
+
+\picw=\hsize \picheight=0pt {\inspic normal.png }
+
+\notoc\sec Testování hypotéz
+
+Nad statistickým souborem známek jsme provedli celkem čtyři hypotézy, popsané níže. Pro jejich správnou iterpretaci je potřeba nejprve rozumnět samotnému testování hypotéz.
+
+Hypotéza je tvrzením o souboru dat, které se snažíme vyvrátit. K tomu používáme tzv. statistické testy. Test odpovídá na následující otázku: {\em Předpokladejme, že hypotéza platí, jak je pravděpodobné
+že naměříme data, která jsme obdrželi?}. (Přesněji odpovídá na otázku, jak pravděpodobné je, že tzv. {\em statistika}, což je funkce spočtená nad souborem dat, dosáhne při platnosti
+hypotézy takové hodnoty, jakou dosáhla). Standardně jsme ochotni riskovat chybu I. řádu (tedy že zamítneme správnou hypotézu) ve výši 5 \%. Test hypotézy nedokáže odpovědět na otázku, 
+zda hypotéza platí (protože předpokladem testu je, že hypotéza platí), ale dokáže odpovědět na otázku, zda hypotéza neplatí, tedy zda přijmeme hypotézu opačnou.
+
+V přehledu parametrů a výsledků testu hypotéz vždy uvádíme hodnotu testové statistiky ($\chi^2$ nebo $F$), a příslušných parametrů, nutných pro nalezení hodnoty příslušného rozdělení
+ve statistických tabulkách. Závěr o tom, zda hypotézu zamítáme a nebo nezamítáme uvádíme pro hladinu významnosti $\alpha = 5 \%$. Dále uvádíme ve zkrácené podobě tyto hodnoty pro další 
+hladiny významnosti, přičemž symbolem $\oplus$ značíme, že hypotézu nezamítáme a symbolem $\ominus$ značíme, že hypotézu zamítáme.
+
+Všechny hypotézy byly testovány pouze na řádných termínech, protože na dalších termínech se dostavují i další vlivy a u 2. opravného termínu je navíc zkoušení ovlivněno zkoušením v komisi.
+
+\begitems \style X
+* {\bf Hypotéza H${}_0$: Známka nezávisí na zkoušejícím.} -- Tato hypotéza tvrdí, že neexistuje závislost mezi dosaženou známkou a examinátorem, který zkouší, tedy že je jedno, kdo studenta zkouší. V případě, že hypotézu zamítneme, 
+tak tvrdíme, že na výslednou známku má vliv, kdo zkouší. Test provádíme pomocí Personova $\chi^2$ testu nezávislosti v kontingenční tabulce. Z testu vyřazujeme statisticky nevýznamné hodnoty.
+* {\bf Hypotéza H${}_1$: Výběrové průměry učitelů se neliší.} -- Tato hypotéza tvrdí, že průměry jednotlivých zkoušejících se zásadně neliší, tedy že si odpovídají a mají srovnatelný rozptyl. Test provádíme pomocí ANOVA $F$\/-testu.
+* {\bf Hypotéza H${}_2$: Výběrové průměry podle pohlaví se neliší.} -- Tato hypotéza tvrdí, že průměry jednotlivých studentů se zásadně neliší podle jejich pohlaví, tedy že si odpovídají a mají srovnatelný rozptyl. Test provádíme pomocí ANOVA $F$\/-testu.
+\enditems
+
+\endmulti

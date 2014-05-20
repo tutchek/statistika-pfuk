@@ -1,0 +1,169 @@
+\input opmac
+\chyph
+
+\input cs-adventor
+\input cs-pagella
+\ifx\font\corkencoded \def\tmp{ec}\else\def\tmp{cs}\fi
+\font\tenss   =\tmp-qhvr  \sizespec
+\font\tenssi  =\tmp-qhvri \sizespec
+\font\tenssb  =\tmp-qhvb  \sizespec
+\font\tenssbi =\tmp-qhvbi \sizespec
+\regfont\tenss \regfont\tenssi \regfont\tenssb \regfont\tenssbi
+\regfont\tenbfc
+\def\ss{\tenss\thefontscale[900]} \def\ssi{\tenssi\thefontscale[900]}
+\def\tt{\tentt\thefontscale[1050]}
+\font\citatrm=\tmp-qagri \sizespec
+\font\thumbbf=\tmp-qagb \sizespec
+\font\male=\tmp-qplr at 8pt
+\font\malebf=\tmp-qplb at 8pt
+\font\maleit=\tmp-qplri at 8pt
+\font\malebi=\tmp-qplbi at 8pt
+
+\def\crx{\crcr\noalign{\penalty10000\hrule\penalty1000\kern-.4pt\hrule\penalty10000}}
+
+\newdimen\Pwidth
+\newdimen\Qwidth
+\def\tabdeclareP {\tabiteml\vtop{\hsize=\Pwidth \leftskip=0pt \rightskip=0pt plus1fil \parindent=0pt
+   \baselineskip=1.2em \lineskiplimit=0pt \noindent ##\tabstrutA}\hss\tabitemr}
+\def\tabdeclareQ {\tabiteml\vtop{\hsize=\Qwidth \leftskip=0pt plus 1fil \rightskip=0pt plus 1fil \parindent=0pt
+   \baselineskip=1.2em \lineskiplimit=0pt \noindent ##\tabstrutA}\tabitemr}
+\Pwidth=2.5cm
+\Qwidth=1cm
+\newtoks\headname \headname={}
+
+\tolerance=2000
+\emergencystretch=1em
+
+\hyperlinks{\Blue}{\Green}
+
+\vfil
+\tit Analýza známek pro PF UK (2010/11, 2011/12, 2012/13)
+
+\vfil
+
+\tit Pracovní materiál pro Právnickou fakultu Univerzity Karlovy v Praze
+
+\vfil
+
+\picw=0.3\hsize \centerline{\inspic logo.jpg }
+\vfil
+\hfill {\em Zpracoval Bc. Michal Tuláček, 20. května 2014}
+\eject
+
+\input uvod
+\secnum=0
+\vfill\eject
+\maketoc
+
+\vfill\eject
+
+\sec Studijní program jako celek
+
+\input analyza/fakulta.tex
+
+\vfill\eject
+
+\sec Katedra evropského práva
+
+\input analyza/HP1323.tex
+
+\vfill\eject
+
+\sec Katedra finančního práva a finanční vědy
+
+\input analyza/HP0132.tex
+
+\vfill\eject
+
+\sec Katedra jazyků
+
+\input analyza/HP0315.tex
+\input analyza/HP0155.tex
+\input analyza/HP0185.tex
+\input analyza/HP0984.tex
+\input analyza/HP1385.tex
+\input analyza/HP1395.tex
+
+\vfill\eject
+
+\sec Katedra mezinárodního práva
+
+\input analyza/HP0852.tex
+
+\vfill\eject
+
+\sec Katedra národního hospodářství
+
+\input analyza/HP0592.tex
+
+\vfill\eject
+
+\sec Katedra občanského práva
+
+\input analyza/HP0272.tex
+\input analyza/HP0277.tex
+\input analyza/HP0285.tex
+
+\vfill\eject
+
+\sec Katedra obchodního práva
+
+\input analyza/HP0262.tex
+\input analyza/HP0296.tex
+
+\vfill\eject
+
+\sec Katedra politologie a sociologie
+
+\input analyza/HP0631.tex
+\input analyza/HP3023.tex
+
+\vfill\eject
+
+\sec Katedra pracovního práva a práva sociálního zabezpečení
+
+\input analyza/HP0642.tex
+\input analyza/HP1152.tex
+
+\vfill\eject
+
+\sec Katedra práva životního prostředí
+
+\input analyza/HP0392.tex
+
+\vfill\eject
+
+\sec Katedra právních dějin
+
+\input analyza/HP0892.tex
+\input analyza/HP0071.tex
+\input analyza/HP0402.tex
+
+\vfill\eject
+
+\sec Katedra správního práva a správní vědy
+
+\input analyza/HP0703.tex
+
+\vfill\eject
+
+\sec Katedra teorie práva a právních učení
+
+\input analyza/HP3020.tex
+\input analyza/HP0682.tex
+
+\vfill\eject
+
+\sec Katedra trestního práva
+
+\input analyza/HP0763.tex
+
+\vfill\eject
+
+\sec Katedra ústavního práva
+
+\input analyza/HP1161.tex
+\input analyza/HP1171.tex
+\input analyza/HP1172.tex
+
+\bye
